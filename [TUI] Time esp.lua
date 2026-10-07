@@ -4,12 +4,23 @@ local player = Players.LocalPlayer
 local function setupTimeLabel(gui)
     local timeLabel = gui:FindFirstChild("Time")
     if timeLabel and timeLabel:IsA("TextLabel") then
+        timeLabel.TextXAlignment = Enum.TextXAlignment.Left
         if gui.Name == "Server Time" then
             timeLabel.Position = UDim2.new(-0.001, 0, 0.479, 0)
             timeLabel.Size = UDim2.new(0.15, 0, 0.1, 0)
         elseif gui.Name == "Day Time" then
-            timeLabel.Position = UDim2.new(-0.001, 0, 0.575, 0)
+            timeLabel.Position = UDim2.new(-0.001, 0, 0.565, 0)
             timeLabel.Size = UDim2.new(0.1, 0, 0.08, 0)
+        end
+    end
+
+    -- Position the dayornight label inside Server Time (below the Time label)
+    if gui.Name == "Server Time" then
+        local dayOrNight = gui:FindFirstChild("dayornight")
+        if dayOrNight and dayOrNight:IsA("TextLabel") then
+            dayOrNight.Position = UDim2.new(-0.001, 0, 0.4, 0)
+            dayOrNight.Size = UDim2.new(0.15, 0, 0.1, 0)
+            dayOrNight.TextXAlignment = Enum.TextXAlignment.Left
         end
     end
 end
