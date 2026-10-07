@@ -10,7 +10,7 @@ local function setupTimeLabel(gui)
             timeLabel.Size = UDim2.new(0.15, 0, 0.1, 0)
         elseif gui.Name == "Day Time" then
             timeLabel.Position = UDim2.new(-0.001, 0, 0.565, 0)
-            timeLabel.Size = UDim2.new(0.1, 0, 0.08, 0)
+            timeLabel.Size = UDim2.new(0.1, 0, 0.15, 0)
         end
     end
 
